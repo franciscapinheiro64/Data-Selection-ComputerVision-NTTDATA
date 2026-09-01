@@ -1,0 +1,40 @@
+[project]
+name = "smart-embedding-clustering-cv"
+version = "0.1.0"
+description = "Image clustering via embeddings"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    "hdbscan>=0.8.44",
+    "matplotlib>=3.11.0",
+    "numpy>=2.4.6",
+    "pandas>=3.0.3",
+    "pillow>=12.3.0",
+    "plotly>=6.9.0",
+    "scikit-learn>=1.9.0",
+    "torch>=2.12.1",
+    "torchvision>=0.27.1",
+    "transformers>=5.13.0",
+    "umap-learn>=0.5.12",
+]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.11.0",
+  "pandas-stubs>=3.0.3.260530",
+  "pre-commit>=4.6.1",
+  "pytest>=8.3.0",
+  "ruff>=0.6.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
